@@ -1,0 +1,93 @@
+{
+  "system-security-plan": {
+    "uuid": "c6d6408e-8bc4-5934-89bb-de6b491e8304",
+    "metadata": {
+      "title": "System security plan placeholder: Example claims assistant",
+      "last-modified": "2026-11-12T12:00:00Z",
+      "version": "0.1.0",
+      "oscal-version": "1.2.1"
+    },
+    "import-profile": {
+      "href": "./profile.json"
+    },
+    "system-characteristics": {
+      "system-ids": [
+        {
+          "id": "2e96466f-2b13-5e1a-9eb1-dd042b3eb73a"
+        }
+      ],
+      "system-name": "Example claims assistant",
+      "description": "Placeholder system record so the OSCAL chain resolves. inspect-oscal does not describe the system.",
+      "system-information": {
+        "information-types": [
+          {
+            "uuid": "a16e97ce-37bf-5676-a6a5-56a33e545a51",
+            "title": "Evaluation data",
+            "description": "Placeholder; impact levels are not assessed by inspect-oscal.",
+            "confidentiality-impact": {
+              "base": "fips-199-low"
+            },
+            "integrity-impact": {
+              "base": "fips-199-low"
+            },
+            "availability-impact": {
+              "base": "fips-199-low"
+            }
+          }
+        ]
+      },
+      "status": {
+        "state": "under-development"
+      },
+      "authorization-boundary": {
+        "description": "Not described by inspect-oscal."
+      }
+    },
+    "system-implementation": {
+      "users": [
+        {
+          "uuid": "1f89a635-834c-5d53-852a-62a6d651d988",
+          "title": "Evaluator"
+        }
+      ],
+      "components": [
+        {
+          "uuid": "abd2a9f7-1c49-5105-91aa-66ff722b256e",
+          "type": "this-system",
+          "title": "Example claims assistant",
+          "description": "The AI system under evaluation.",
+          "status": {
+            "state": "operational"
+          }
+        }
+      ]
+    },
+    "control-implementation": {
+      "description": "Implementation is not described by inspect-oscal.",
+      "implemented-requirements": [
+        {
+          "uuid": "f9767674-c816-54a5-9d29-3266c6d35c41",
+          "control-id": "MEASURE_2.1",
+          "by-components": [
+            {
+              "component-uuid": "abd2a9f7-1c49-5105-91aa-66ff722b256e",
+              "uuid": "f267c926-eb6b-5d8b-a300-701aee05f113",
+              "description": "Not described by inspect-oscal; to be supplied by the system owner."
+            }
+          ]
+        },
+        {
+          "uuid": "e63c0341-ddbc-5d1a-8345-2f15a0e7ea15",
+          "control-id": "MEASURE_2.7",
+          "by-components": [
+            {
+              "component-uuid": "abd2a9f7-1c49-5105-91aa-66ff722b256e",
+              "uuid": "574f4a8a-cf98-5b5c-920c-5c0c056df062",
+              "description": "Not described by inspect-oscal; to be supplied by the system owner."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

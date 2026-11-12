@@ -1,0 +1,70 @@
+# inspect-oscal default mapping (schema version 1).
+#
+# THIS FILE IS AN OPINION, NOT A NIST MAPPING. It links kinds of Inspect evals to the AI RMF 1.0
+# subcategory whose outcome text names the same risk. NIST has not endorsed it. Copy it
+# (`inspect-oscal mapping init > mapping.yaml`), edit it, and own the result.
+#
+# No rule below declares a threshold, so out of the box the tool writes OBSERVATIONS only. A
+# threshold is your judgement; add one under `scores:` as
+#   threshold: {op: ">=", value: 0.70}
+# and each observation then carries a `threshold-result` property (met / missed / not-evaluated).
+# With `--findings` the tool also writes OSCAL findings whose status records only that threshold
+# result; it is not a determination about the subcategory.
+version: 1
+catalog: nist-ai-rmf-1.0
+statement: derived
+rules:
+  - id: tevv-documentation
+    description: "Test sets, metrics and tools are documented by the log itself (MEASURE 2.1)."
+    match: {all: true}
+    targets: [MEASURE_2.1]
+    observe: {kind: log-facts}
+
+  - id: capability-validity
+    description: "Capability evals measure performance for MEASURE 2.3 and 2.5."
+    match:
+      any:
+        - tags: [capability]
+    targets: [MEASURE_2.3, MEASURE_2.5]
+    scores:
+      - {scorer: "*", metric: accuracy}
+
+  - id: safety-evals
+    description: "Safety and harm evals for MEASURE 2.6."
+    match:
+      any:
+        - task_glob: ["*safety*", "*harm*", "*refusal*"]
+        - tags: [safety, harmful]
+    targets: [MEASURE_2.6]
+    scores:
+      - {scorer: "*", metric: accuracy}
+
+  - id: security-evals
+    description: "Security and resilience evals for MEASURE 2.7."
+    match:
+      any:
+        - task_glob: ["*cyber*", "*ctf*", "*cve*"]
+        - tags: [cybersecurity, security]
+    targets: [MEASURE_2.7]
+    scores:
+      - {scorer: "*", metric: accuracy}
+
+  - id: privacy-evals
+    description: "Privacy evals for MEASURE 2.10."
+    match:
+      any:
+        - task_glob: ["*privacy*", "*pii*"]
+        - tags: [privacy]
+    targets: [MEASURE_2.10]
+    scores:
+      - {scorer: "*", metric: accuracy}
+
+  - id: fairness-evals
+    description: "Fairness and bias evals for MEASURE 2.11."
+    match:
+      any:
+        - task_glob: ["*bias*", "*fairness*"]
+        - tags: [fairness, bias]
+    targets: [MEASURE_2.11]
+    scores:
+      - {scorer: "*", metric: accuracy}

@@ -1,0 +1,28 @@
+{
+  "assessment-plan": {
+    "uuid": "ef9445fe-f02b-549b-ba9e-2fc6f7acd3bf",
+    "metadata": {
+      "title": "Assessment plan for Inspect eval evidence",
+      "last-modified": "2026-11-12T12:00:00Z",
+      "version": "0.1.0",
+      "oscal-version": "1.2.1"
+    },
+    "import-ssp": {
+      "href": "./ssp.json"
+    },
+    "reviewed-controls": {
+      "control-selections": [
+        {
+          "include-controls": [
+            {
+              "control-id": "MEASURE_2.1"
+            },
+            {
+              "control-id": "MEASURE_2.7"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "profile": {
+    "uuid": "db8df263-f059-5ec1-9207-72ca4e0a7da6",
+    "metadata": {
+      "title": "AI RMF subcategories referenced by Inspect evidence",
+      "last-modified": "2026-11-12T12:00:00Z",
+      "version": "0.1.0",
+      "oscal-version": "1.2.1"
+    },
+    "imports": [
+      {
+        "href": "./NIST_AI-RMF_v1_catalog.json",
+        "include-controls": [
+          {
+            "with-ids": [
+              "MEASURE_2.1",
+              "MEASURE_2.7"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

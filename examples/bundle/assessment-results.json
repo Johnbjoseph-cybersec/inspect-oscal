@@ -1,0 +1,662 @@
+{
+  "assessment-results": {
+    "uuid": "8e464e57-eccb-53c3-b01a-210bf5f9dd70",
+    "metadata": {
+      "title": "Inspect eval evidence mapped to NIST AI RMF 1.0",
+      "last-modified": "2026-11-12T12:00:00Z",
+      "version": "0.1.0",
+      "oscal-version": "1.2.1",
+      "props": [
+        {
+          "name": "tool",
+          "value": "inspect-oscal 0.1.0",
+          "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+        },
+        {
+          "name": "mapping-statement",
+          "value": "derived",
+          "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+        },
+        {
+          "name": "mapping-sha256",
+          "value": "d8bdb06085436132d3eda6a2cb0f8d7b7d7ba739dbf2073468d7f821936f6b33",
+          "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+        },
+        {
+          "name": "catalog-sha256",
+          "value": "09de09ecd15f861c4ec05aa192872dc2faafc3bef41c4bc57e19247e84f92545",
+          "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+        },
+        {
+          "name": "findings-included",
+          "value": "false",
+          "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+        }
+      ],
+      "remarks": "Derived mapping, not NIST-endorsed. Evidence from Inspect eval logs. Where a finding is present, its status records only whether a user-declared threshold was met on that evidence; it is not a determination about any subcategory."
+    },
+    "import-ap": {
+      "href": "./assessment-plan.json"
+    },
+    "results": [
+      {
+        "uuid": "603654a6-40b9-53a1-bb7a-60878325b195",
+        "title": "cyber_smoke on mockllm/model",
+        "description": "Evidence from one Inspect eval log. Derived mapping, not NIST-endorsed. Evidence from Inspect eval logs. Where a finding is present, its status records only whether a user-declared threshold was met on that evidence; it is not a determination about any subcategory.",
+        "start": "2026-11-12T10:49:06Z",
+        "local-definitions": {
+          "components": [
+            {
+              "uuid": "c8e3f6c5-c0bf-5a16-9cb2-dffa1a446334",
+              "type": "software",
+              "title": "mockllm/model (model under test)",
+              "description": "Model evaluated in the referenced Inspect eval log.",
+              "status": {
+                "state": "operational"
+              }
+            }
+          ],
+          "assessment-assets": {
+            "assessment-platforms": [
+              {
+                "uuid": "757a04a4-d5af-570e-9b08-4c40b57e9fd5",
+                "title": "Inspect AI 0.3.289",
+                "props": [
+                  {
+                    "name": "tool-version",
+                    "value": "0.3.289",
+                    "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "reviewed-controls": {
+          "control-selections": [
+            {
+              "include-controls": [
+                {
+                  "control-id": "MEASURE_2.1"
+                },
+                {
+                  "control-id": "MEASURE_2.7"
+                }
+              ]
+            }
+          ]
+        },
+        "observations": [
+          {
+            "uuid": "10e918ff-0df3-57de-84bb-af371375e1de",
+            "title": "cyber_smoke: log facts",
+            "description": "Task cyber_smoke was run on model mockllm/model against dataset unnamed (2 samples). Scorers: includes. Log status: success.",
+            "props": [
+              {
+                "name": "task",
+                "value": "cyber_smoke",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "task-version",
+                "value": "0",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "eval-id",
+                "value": "6GbPgeE9EtKBeW97CgAkvK",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "run-id",
+                "value": "oSSha9zMvibXhaphUU96Jc",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "total-samples",
+                "value": "2",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "completed-samples",
+                "value": "2",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "eval-status",
+                "value": "success",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "rule-id",
+                "value": "tevv-documentation",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "abnormal-scores-checked",
+                "value": "true",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "abnormal-scores",
+                "value": "0",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "mapping-statement",
+                "value": "derived",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "inspect-version",
+                "value": "0.3.289",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              }
+            ],
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "origins": [
+              {
+                "actors": [
+                  {
+                    "type": "tool",
+                    "actor-uuid": "757a04a4-d5af-570e-9b08-4c40b57e9fd5"
+                  }
+                ]
+              }
+            ],
+            "subjects": [
+              {
+                "subject-uuid": "c8e3f6c5-c0bf-5a16-9cb2-dffa1a446334",
+                "type": "component"
+              }
+            ],
+            "relevant-evidence": [
+              {
+                "href": "#c2ad70f6-9291-56e1-bb0a-5ca6fdfbeb40",
+                "description": "Inspect eval log; its SHA-256 is recorded in the back-matter."
+              }
+            ],
+            "collected": "2026-11-12T10:49:07Z"
+          },
+          {
+            "uuid": "c37ea605-b2d6-550c-9413-266fe0a35c72",
+            "title": "cyber_smoke: includes.accuracy",
+            "description": "Task cyber_smoke on model mockllm/model: scorer includes, metric accuracy = 1.0 over 2/2 samples (log status: success).",
+            "props": [
+              {
+                "name": "task",
+                "value": "cyber_smoke",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "task-version",
+                "value": "0",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "eval-id",
+                "value": "6GbPgeE9EtKBeW97CgAkvK",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "run-id",
+                "value": "oSSha9zMvibXhaphUU96Jc",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "scorer",
+                "value": "includes",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "metric",
+                "value": "accuracy",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "total-samples",
+                "value": "2",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "completed-samples",
+                "value": "2",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "eval-status",
+                "value": "success",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "rule-id",
+                "value": "security-evals",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "abnormal-scores-checked",
+                "value": "true",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "abnormal-scores",
+                "value": "0",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "mapping-statement",
+                "value": "derived",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "metric-value",
+                "value": "1.0",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "scored-samples",
+                "value": "2",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "unscored-samples",
+                "value": "0",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "threshold",
+                "value": ">= 0.7",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "threshold-result",
+                "value": "met",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              }
+            ],
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "origins": [
+              {
+                "actors": [
+                  {
+                    "type": "tool",
+                    "actor-uuid": "757a04a4-d5af-570e-9b08-4c40b57e9fd5"
+                  }
+                ]
+              }
+            ],
+            "subjects": [
+              {
+                "subject-uuid": "c8e3f6c5-c0bf-5a16-9cb2-dffa1a446334",
+                "type": "component"
+              }
+            ],
+            "relevant-evidence": [
+              {
+                "href": "#c2ad70f6-9291-56e1-bb0a-5ca6fdfbeb40",
+                "description": "Inspect eval log; its SHA-256 is recorded in the back-matter."
+              }
+            ],
+            "collected": "2026-11-12T10:49:07Z"
+          }
+        ],
+        "end": "2026-11-12T10:49:07Z"
+      },
+      {
+        "uuid": "69034ff0-fcf6-5201-9330-9d5f4d7ba5c1",
+        "title": "cyber_smoke on mockllm/model",
+        "description": "Evidence from one Inspect eval log. Derived mapping, not NIST-endorsed. Evidence from Inspect eval logs. Where a finding is present, its status records only whether a user-declared threshold was met on that evidence; it is not a determination about any subcategory.",
+        "start": "2026-11-12T10:49:20Z",
+        "local-definitions": {
+          "components": [
+            {
+              "uuid": "946db50b-875c-5489-abe4-57cc63837b61",
+              "type": "software",
+              "title": "mockllm/model (model under test)",
+              "description": "Model evaluated in the referenced Inspect eval log.",
+              "status": {
+                "state": "operational"
+              }
+            }
+          ],
+          "assessment-assets": {
+            "assessment-platforms": [
+              {
+                "uuid": "a4aa84e5-5f93-5172-9ea3-db13d72da643",
+                "title": "Inspect AI 0.3.289",
+                "props": [
+                  {
+                    "name": "tool-version",
+                    "value": "0.3.289",
+                    "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "reviewed-controls": {
+          "control-selections": [
+            {
+              "include-controls": [
+                {
+                  "control-id": "MEASURE_2.1"
+                },
+                {
+                  "control-id": "MEASURE_2.7"
+                }
+              ]
+            }
+          ]
+        },
+        "observations": [
+          {
+            "uuid": "c658e23d-7313-5064-a0ed-1035c80010d8",
+            "title": "cyber_smoke: log facts",
+            "description": "Task cyber_smoke was run on model mockllm/model against dataset unnamed (2 samples). Scorers: includes. Log status: success.",
+            "props": [
+              {
+                "name": "task",
+                "value": "cyber_smoke",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "task-version",
+                "value": "0",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "eval-id",
+                "value": "F6CGWeyg6Dipv6tYr9gWK3",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "run-id",
+                "value": "3kptPQmGR5xftFNdS5dvar",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "total-samples",
+                "value": "2",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "completed-samples",
+                "value": "2",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "eval-status",
+                "value": "success",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "rule-id",
+                "value": "tevv-documentation",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "abnormal-scores-checked",
+                "value": "true",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "abnormal-scores",
+                "value": "0",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "mapping-statement",
+                "value": "derived",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "inspect-version",
+                "value": "0.3.289",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              }
+            ],
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "origins": [
+              {
+                "actors": [
+                  {
+                    "type": "tool",
+                    "actor-uuid": "a4aa84e5-5f93-5172-9ea3-db13d72da643"
+                  }
+                ]
+              }
+            ],
+            "subjects": [
+              {
+                "subject-uuid": "946db50b-875c-5489-abe4-57cc63837b61",
+                "type": "component"
+              }
+            ],
+            "relevant-evidence": [
+              {
+                "href": "#ee785fad-f74e-5fbd-9d70-f77f39d74717",
+                "description": "Inspect eval log; its SHA-256 is recorded in the back-matter."
+              }
+            ],
+            "collected": "2026-11-12T10:49:22Z"
+          },
+          {
+            "uuid": "199f94ae-e537-5914-82f0-dd5c1a03b7d9",
+            "title": "cyber_smoke: includes.accuracy",
+            "description": "Task cyber_smoke on model mockllm/model: scorer includes, metric accuracy = 1.0 over 2/2 samples (log status: success).",
+            "props": [
+              {
+                "name": "task",
+                "value": "cyber_smoke",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "task-version",
+                "value": "0",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "eval-id",
+                "value": "F6CGWeyg6Dipv6tYr9gWK3",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "run-id",
+                "value": "3kptPQmGR5xftFNdS5dvar",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "scorer",
+                "value": "includes",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "metric",
+                "value": "accuracy",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "total-samples",
+                "value": "2",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "completed-samples",
+                "value": "2",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "eval-status",
+                "value": "success",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "rule-id",
+                "value": "security-evals",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "abnormal-scores-checked",
+                "value": "true",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "abnormal-scores",
+                "value": "0",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "mapping-statement",
+                "value": "derived",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "metric-value",
+                "value": "1.0",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "scored-samples",
+                "value": "2",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "unscored-samples",
+                "value": "0",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "threshold",
+                "value": ">= 0.7",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              },
+              {
+                "name": "threshold-result",
+                "value": "met",
+                "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+              }
+            ],
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "origins": [
+              {
+                "actors": [
+                  {
+                    "type": "tool",
+                    "actor-uuid": "a4aa84e5-5f93-5172-9ea3-db13d72da643"
+                  }
+                ]
+              }
+            ],
+            "subjects": [
+              {
+                "subject-uuid": "946db50b-875c-5489-abe4-57cc63837b61",
+                "type": "component"
+              }
+            ],
+            "relevant-evidence": [
+              {
+                "href": "#ee785fad-f74e-5fbd-9d70-f77f39d74717",
+                "description": "Inspect eval log; its SHA-256 is recorded in the back-matter."
+              }
+            ],
+            "collected": "2026-11-12T10:49:22Z"
+          }
+        ],
+        "end": "2026-11-12T10:49:22Z"
+      }
+    ],
+    "back-matter": {
+      "resources": [
+        {
+          "uuid": "c2ad70f6-9291-56e1-bb0a-5ca6fdfbeb40",
+          "title": "2026-11-12T10-49-06-00-00_cyber-smoke_nBUNx2qxeFBX5hEKfxBAE2.eval",
+          "description": "Inspect eval log, format .eval, eval_id 6GbPgeE9EtKBeW97CgAkvK.",
+          "props": [
+            {
+              "name": "eval-id",
+              "value": "6GbPgeE9EtKBeW97CgAkvK",
+              "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+            },
+            {
+              "name": "log-format",
+              "value": "eval",
+              "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+            },
+            {
+              "name": "inspect-log-version",
+              "value": "2",
+              "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "2026-11-12T10-49-06-00-00_cyber-smoke_nBUNx2qxeFBX5hEKfxBAE2.eval",
+              "media-type": "application/zip",
+              "hashes": [
+                {
+                  "algorithm": "SHA-256",
+                  "value": "28b9a533d059d8ff354598d8b26b7c5fa06f87a5e1e5789df30c0e1c821ba526"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "uuid": "ee785fad-f74e-5fbd-9d70-f77f39d74717",
+          "title": "2026-11-12T10-49-20-00-00_cyber-smoke_7hCcydFzWkn6yYmqCJN8Bt.json",
+          "description": "Inspect eval log, format .json, eval_id F6CGWeyg6Dipv6tYr9gWK3.",
+          "props": [
+            {
+              "name": "eval-id",
+              "value": "F6CGWeyg6Dipv6tYr9gWK3",
+              "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+            },
+            {
+              "name": "log-format",
+              "value": "json",
+              "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+            },
+            {
+              "name": "inspect-log-version",
+              "value": "2",
+              "ns": "https://github.com/Johnbjoseph-cybersec/inspect-oscal/ns/1.0"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "2026-11-12T10-49-20-00-00_cyber-smoke_7hCcydFzWkn6yYmqCJN8Bt.json",
+              "media-type": "application/json",
+              "hashes": [
+                {
+                  "algorithm": "SHA-256",
+                  "value": "89c13581c008b0e8367bb399189d0ff6d6a21016e01698150f653ecd8d293de7"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

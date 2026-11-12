@@ -1,0 +1,45 @@
+name: ci
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Fetch oscal-cli 3.2.0 (SHA-256 checked before unzip)
+        run: |
+          curl -fsSL -o oscal-cli.zip https://repo1.maven.org/maven2/dev/metaschema/oscal/oscal-cli-enhanced/3.2.0/oscal-cli-enhanced-3.2.0-oscal-cli.zip
+          echo "e001b353ee245da6f4ff0ad930c4dfaa88083c63243ca004bd5f5bcef44e8ec8  oscal-cli.zip" | sha256sum -c -
+          unzip -q oscal-cli.zip -d oscal-cli
+          echo "INSPECT_OSCAL_CLI=$PWD/oscal-cli/bin/oscal-cli" >> "$GITHUB_ENV"
+      - run: pip install -e ".[dev]"
+      - run: ruff check . && ruff format --check .
+      - run: mypy
+      - run: INSPECT_OSCAL_REQUIRE_CLI=1 pytest --cov=inspect_oscal
+  lowest-direct:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - run: pip install uv==0.13.5
+      - run: uv pip install --system --resolution lowest-direct -e ".[dev]"
+      - run: pytest -k "not oscal_cli"

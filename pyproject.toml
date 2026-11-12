@@ -1,0 +1,79 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "inspect-oscal"
+dynamic = ["version"]
+description = "Unofficial: convert Inspect eval logs into OSCAL assessment-results evidence mapped to NIST AI RMF subcategories."
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = "MIT"
+license-files = ["LICENSE", "src/inspect_oscal/data/NIST_LICENSE.md"]
+authors = [{ name = "John B Joseph" }]
+keywords = ["oscal", "inspect", "nist", "ai-rmf", "evals", "grc", "evidence"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Information Technology",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
+dependencies = [
+  "inspect-ai>=0.3.289,<1",
+  "click>=8.1",
+  "pyyaml>=6.0.2",
+  "pydantic>=2.13",
+  "fsspec>=2024.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==9.2.0",
+  "pytest-cov==7.1.0",
+  "ruff==0.17.4",
+  "mypy==2.4.1",
+  "types-PyYAML==6.0.12.20261111",
+]
+
+[project.urls]
+Homepage = "https://github.com/Johnbjoseph-cybersec/inspect-oscal"
+Repository = "https://github.com/Johnbjoseph-cybersec/inspect-oscal"
+Issues = "https://github.com/Johnbjoseph-cybersec/inspect-oscal/issues"
+
+[project.scripts]
+inspect-oscal = "inspect_oscal.cli:main"
+
+[tool.hatch.version]
+path = "src/inspect_oscal/constants.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/inspect_oscal"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "examples", "docs", "README.md", "LICENSE", "pyproject.toml"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF", "C4", "PT"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["PT018", "C408"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src", "tests"]
+
+[[tool.mypy.overrides]]
+module = ["fsspec", "fsspec.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

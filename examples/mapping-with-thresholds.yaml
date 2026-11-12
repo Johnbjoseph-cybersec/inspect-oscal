@@ -1,0 +1,21 @@
+# Example user mapping: the default security rule plus a threshold the user chose.
+# The 0.70 threshold is this example's own judgement, not a NIST value.
+version: 1
+catalog: nist-ai-rmf-1.0
+statement: derived
+rules:
+  - id: tevv-documentation
+    match: {all: true}
+    targets: [MEASURE_2.1]
+    observe: {kind: log-facts}
+
+  - id: security-evals
+    description: "Cyber evals count as security-and-resilience evidence."
+    match:
+      any:
+        - task_glob: ["*cyber*", "*ctf*", "*cve*"]
+        - tags: [cybersecurity, security]
+    targets: [MEASURE_2.7]
+    scores:
+      - {scorer: "*", metric: accuracy, threshold: {op: ">=", value: 0.70}}
+    require_complete: true

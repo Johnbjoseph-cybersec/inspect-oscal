@@ -1,0 +1,14 @@
+{
+  "tool": "inspect-oscal 0.1.0",
+  "oscal-version": "1.2.1",
+  "mapping-sha256": "d8bdb06085436132d3eda6a2cb0f8d7b7d7ba739dbf2073468d7f821936f6b33",
+  "catalog-sha256": "09de09ecd15f861c4ec05aa192872dc2faafc3bef41c4bc57e19247e84f92545",
+  "statement": "Evidence from Inspect eval logs. Derived mapping, not NIST-endorsed. Any finding status records only a user-declared threshold result. The manifest detects accidental change; it is not tamper-proof.",
+  "files": {
+    "NIST_AI-RMF_v1_catalog.json": "09de09ecd15f861c4ec05aa192872dc2faafc3bef41c4bc57e19247e84f92545",
+    "assessment-plan.json": "1c8b0b9a89e1e44e584d6cf4d56f40e232cf5db4577d24d56312d67620712eca",
+    "assessment-results.json": "debaf1b08b8d01de244f8972339665342e21e253590531d8788e0976185e3f9e",
+    "profile.json": "123b1d001cd5a8eda2ee46a0caf005ec5b5da35889fa29f5982bbb67c1943e1b",
+    "ssp.json": "c5601a2bc7b1e2dadaef2a6b3de23a76ff3b0a6db5fd45449b3d9bf979bd19d3"
+  }
+}
